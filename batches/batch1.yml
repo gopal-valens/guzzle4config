@@ -1,0 +1,11 @@
+version: 1
+context_stage_mappings:
+- context: {}
+  stages:
+  - name: "SRI"
+    job_groups:
+    - "pipeline1"
+    - "pipeline1_copy"
+  - name: "FND"
+    job_groups:
+    - "pipeline2"

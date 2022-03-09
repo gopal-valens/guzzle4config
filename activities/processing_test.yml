@@ -1,0 +1,25 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "lo_delta"
+  properties:
+    sql: "select distinct(*) from ${p_d2i_lnd_db_th}.lnd_${p_table_name} stg union all select sri.* from ${p_d2i_sri_db_th}.sri_${p_table_name} sri left join ${p_d2i_lnd_db_th}.lnd_${p_table_name} stg on stg.integration_key=sri.integration_key where stg.integration_key is null and sri.w_business_dt = (select coalesce(max(w_business_dt),'1900-01-01T00:00:00') as w_business_dt from ${p_d2i_sri_db_th}.sri_${p_table_name})"
+target:
+  endpoint: "lo_delta"
+  operation: "append"
+  incremental: false
+  soft_delete: false
+  properties:
+    table: "${p_d2i_sri_db_th}.sri_${p_table_name}"
+  additional_columns:
+  - name: "w_job_instance_id"
+    value: "${job_instance_id}"
+  - name: "w_batch_id"
+    value: "${batch_id}"
+  - name: "w_business_dt"
+    value: "${business_date}"
+  truncate_partition_columns:
+  - name: "w_business_dt"
+    value: "${business_date}"
+folder: "/"

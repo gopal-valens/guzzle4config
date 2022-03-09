@@ -1,0 +1,7 @@
+version: 1
+context_stage_mappings:
+- context: {}
+  stages:
+  - name: "SRI"
+    job_groups:
+    - "key_vault_test_pipeline"
