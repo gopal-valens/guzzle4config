@@ -5,7 +5,7 @@ job:
 source:
   endpoint: "lo_dbfs"
   properties:
-    source_file_pattern: "csv/users1.csv"
+    source_file_pattern: "csv/users*.csv"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
