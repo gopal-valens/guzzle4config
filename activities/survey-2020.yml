@@ -1,8 +1,30 @@
 version: 1
 job:
   type: "ingestion"
+source:
+  endpoint: "lo_dbfs"
+  properties:
+    source_file_pattern: "/csv/survey/enterprise-survey-2020.csv"
+    format: "delimited"
+    charset: "UTF-8"
+    partial_load: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      infer_schema: false
+      clean_column_name: false
+      trim_white_space: "none"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
   discard: true
+target:
+  endpoint: "lo_delta"
+  properties:
+    table: "enterprise-survey"
+    auto_create_table: true
+    merge_schema: false
+  operation: "append"
 folder: "/survey"
