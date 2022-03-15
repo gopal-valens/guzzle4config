@@ -5,29 +5,27 @@ job:
 source:
   endpoint: "lo_dbfs"
   properties:
-    source_file_pattern: "csv/users*.csv"
-    format: "delimited"
+    source_file_pattern: "/csv/testcol/test.xlsx"
+    format: "excel"
     charset: "UTF-8"
     partial_load: false
     format_properties:
-      column_delimiter: ","
-      quote_delimiter: "\""
-      escape_char: "\\\\"
       contains_header: true
       infer_schema: false
       clean_column_name: false
-      trim_white_space: "none"
+      columns:
+      - sr_no: "4"
+      data_address: "A1"
+      empty_as_null: true
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
   discard: true
   columns: []
 target:
-  endpoint: "lo_dbfs"
+  endpoint: "lo_delta"
   properties:
-    format: "json"
-    charset: "UTF-8"
-    path: "json_tgt"
-    preserve_hierarchy: false
-    format_properties:
-      merge_file: true
+    table: "coltest"
+    auto_create_table: true
+    merge_schema: false
+  operation: "append"
