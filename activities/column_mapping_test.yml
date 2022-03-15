@@ -5,7 +5,7 @@ job:
 source:
   endpoint: "lo_dbfs"
   properties:
-    source_file_pattern: "/csv/testcol/test.xlsx"
+    source_file_pattern: "/csv/testcol/coltest.xlsx"
     format: "excel"
     charset: "UTF-8"
     partial_load: false
