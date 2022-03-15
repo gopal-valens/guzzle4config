@@ -4,6 +4,6 @@ parallel: 2
 properties:
   auto_dependency: false
 jobs:
-- "csv_to_json_copy1"
+- "survey-2020"
 - "csv_to_json_copy2"
 spark_properties: {}
