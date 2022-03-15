@@ -23,7 +23,7 @@ schema:
 target:
   endpoint: "lo_delta"
   properties:
-    table: "enterprise-survey-2020"
+    table: "enterprise_survey_2020"
     auto_create_table: true
     merge_schema: false
   operation: "append"
