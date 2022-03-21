@@ -10,7 +10,7 @@ jobs:
       param1: "value1"
       param2: "value2"
     spark_properties:
-      job_compute_key: "compute_10"
+      job_compute_key: "compute_1"
 - csv_to_json_copy2:
     job_parameters:
       param3: "value3"
