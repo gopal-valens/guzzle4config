@@ -3,5 +3,7 @@ description: ""
 parallel: 1
 properties:
   auto_dependency: false
-  pipeline_type: "databricks_multitask"
-jobs: []
+jobs:
+- "processing_test"
+- "csv_to_json_copy2"
+- "csv_to_json_copy1"
