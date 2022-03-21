@@ -3,7 +3,27 @@ description: ""
 parallel: 1
 properties:
   auto_dependency: false
+  pipeline_type: "databricks_multitask"
 jobs:
-- "processing_test"
-- "csv_to_json_copy2"
-- "csv_to_json_copy1"
+- processing_test:
+    job_parameters:
+      param1: "value1"
+      param2: "value2"
+- csv_to_json_copy2:
+    job_parameters:
+      param3: "value3"
+- csv_to_json_copy1:
+    job_parameters:
+      param4: "value4"
+computes:
+- name: "shared1"
+  properties:
+    cluster_tags:
+      tag1: "value1"
+    driver_node_type_id: "Standard_DS3_v2"
+    node_type_id: "Standard_DS3_v2"
+    spark_version: "9.1.x-scala2.12"
+    workers:
+      autoscale:
+        max_workers: 8
+        min_workers: 2
