@@ -14,6 +14,8 @@ jobs:
 - csv_to_json_copy2:
     job_parameters:
       param3: "value3"
+    spark_properties:
+      job_compute_key: "compute_1"
 - csv_to_json_copy1:
     job_parameters:
       param4: "value4"
