@@ -1,0 +1,53 @@
+version: 1
+description: ""
+parallel: 1
+properties:
+  auto_dependency: false
+  pipeline_type: "databricks_multitask"
+jobs:
+- processing_test:
+    job_parameters:
+      param1: "value1"
+      param2: "value2"
+    spark_properties:
+      job_compute_key: "compute_1"
+- csv_to_json_copy2:
+    job_parameters:
+      param3: "value3"
+    spark_properties:
+      job_compute_key: "compute_1"
+- csv_to_json_copy1:
+    job_parameters:
+      param4: "value4"
+computes:
+- name: "compute_1"
+  properties:
+    cluster_tags:
+      label1: "value1"
+      label2: "value2"
+    driver_node_type_id: "Standard_DS3_v2"
+    init_scripts:
+    - "script1"
+    - "script2"
+    node_type_id: "Standard_DS3_v2"
+    retry_properties:
+      max_retries: 2
+      min_retry_interval_millis: 300000
+    spark_conf:
+      conf1: "vaule1"
+      conf2: "value2"
+    spark_env_vars:
+      env2: "value2"
+      evn1: "value1"
+    spark_version: "9.1.x-scala2.12"
+    workers:
+      num_workers: 8
+- name: "compute_2"
+  properties:
+    driver_node_type_id: "Standard_DS3_v2"
+    node_type_id: "Standard_DS3_v2"
+    spark_version: "9.1.x-scala2.12"
+    workers:
+      autoscale:
+        max_workers: "2"
+        min_workers: "1"
