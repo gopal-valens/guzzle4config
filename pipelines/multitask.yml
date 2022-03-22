@@ -19,6 +19,8 @@ jobs:
 - csv_to_json_copy1:
     job_parameters:
       param4: "value4"
+    spark_properties:
+      job_compute_key: "shared_compute"
 - "column_mapping_test"
 computes:
 - name: "compute_1"
@@ -52,3 +54,10 @@ computes:
       autoscale:
         max_workers: "2"
         min_workers: "1"
+- name: "shared_compute"
+  properties:
+    driver_node_type_id: "Standard_DS3_v2"
+    node_type_id: "Standard_DS3_v2"
+    spark_version: "9.1.x-scala2.12"
+    workers:
+      num_workers: 8
