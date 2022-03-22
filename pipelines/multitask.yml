@@ -19,6 +19,7 @@ jobs:
 - csv_to_json_copy1:
     job_parameters:
       param4: "value4"
+- "column_mapping_test"
 computes:
 - name: "compute_1"
   properties:
