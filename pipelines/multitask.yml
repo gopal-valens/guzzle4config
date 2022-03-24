@@ -23,32 +23,32 @@ jobs:
 computes:
 - name: "compute_1"
   properties:
-    cluster_tags:
-      label1: "value1"
-      label2: "value2"
+    spark_version: "9.1.x-scala2.12"
     driver_node_type_id: "Standard_DS3_v2"
-    init_scripts:
-    - "script1"
-    - "script2"
     node_type_id: "Standard_DS3_v2"
-    retry_properties:
-      max_retries: 2
-      min_retry_interval_millis: 300000
+    workers:
+      num_workers: 8
     spark_conf:
       conf1: "vaule1"
       conf2: "value2"
     spark_env_vars:
       env2: "value2"
       evn1: "value1"
-    spark_version: "9.1.x-scala2.12"
-    workers:
-      num_workers: 8
+    init_scripts:
+    - "script1"
+    - "script2"
+    cluster_tags:
+      label1: "value1"
+      label2: "value2"
+    retry_properties:
+      max_retries: 2
+      min_retry_interval_millis: 300000
 - name: "compute_2"
   properties:
+    spark_version: "9.1.x-scala2.12"
     driver_node_type_id: "Standard_DS3_v2"
     node_type_id: "Standard_DS3_v2"
-    spark_version: "9.1.x-scala2.12"
     workers:
       autoscale:
-        max_workers: "2"
         min_workers: "1"
+        max_workers: "2"
