@@ -27,7 +27,7 @@ target:
   properties:
     format: "json"
     charset: "UTF-8"
-    path: "json_tgt/users2/"
+    path: "json/users2/"
     preserve_hierarchy: false
     format_properties:
       merge_file: true
