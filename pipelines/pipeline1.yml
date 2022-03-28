@@ -8,19 +8,6 @@ jobs:
     job_parameters:
       param1: "value1"
       param2: "value2"
-    spark_properties:
-      job_cluster_key: "shared-cluster"
 - csv_to_json_copy2:
     job_parameters:
       param3: "value3"
-    spark_properties:
-      driver_node_type_id: "Standard_DS3_v2"
-      node_type_id: "Standard_DS3_v2"
-      spark_conf:
-        sconfig1": "svalue1"
-        sconfig2": "svalue2"
-      spark_version: "apache-spark-2.4.x-scala2.11"
-      workers:
-        autoscale:
-          max_workers: "8"
-          min_workers: "1"
