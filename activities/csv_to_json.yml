@@ -5,7 +5,7 @@ job:
 source:
   endpoint: "lo_dbfs"
   properties:
-    source_file_pattern: "csv/users*.csv"
+    source_file_pattern: "csv/users1.csv"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
@@ -22,11 +22,9 @@ schema:
   strict_schema_check: true
   discard: true
   columns:
-  - name: "id"
+  - name: "age"
     nullable:
-      value: true
-    validate_sql:
-      value: "id > 10"
+      value: false
 target:
   endpoint: "lo_dbfs"
   properties:
@@ -39,5 +37,5 @@ target:
 reject:
   endpoint: "lo_hive"
   properties:
-    table: "reject_test"
+    table: "reject_test_2"
     auto_create_table: true
