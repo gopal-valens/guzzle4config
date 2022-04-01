@@ -15,11 +15,17 @@ jobs:
     job_parameters:
       param3: "value3"
     spark_properties:
-      job_compute_key: "compute_1"
+      job_compute_key: "compute_2"
 - csv_to_json_copy1:
     job_parameters:
       param4: "value4"
-- "column_mapping_test"
+    spark_properties:
+      cluster_id: "existing-cluster-id"
+- column_mapping_test:
+    spark_properties:
+      driver_node_type_id: "Standard_DS4_v2"
+      node_type_id: "Standard_DS4_v2"
+- "local_csv_to_json"
 computes:
 - name: "compute_1"
   properties:
@@ -27,7 +33,7 @@ computes:
     driver_node_type_id: "Standard_DS3_v2"
     node_type_id: "Standard_DS3_v2"
     workers:
-      num_workers: 8
+      num_workers: "1"
     spark_conf:
       conf1: "vaule1"
       conf2: "value2"
@@ -36,10 +42,8 @@ computes:
       evn1: "value1"
     init_scripts:
     - "script1"
-    - "script2"
     cluster_tags:
       label1: "value1"
-      label2: "value2"
     retry_properties:
       max_retries: 2
       min_retry_interval_millis: 300000
