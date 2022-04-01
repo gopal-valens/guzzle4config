@@ -20,7 +20,7 @@ jobs:
     job_parameters:
       param4: "value4"
     spark_properties:
-      cluster_id: "existing-cluster-id"
+      cluster_id: "0228-044814-pdvpv8h3"
 - column_mapping_test:
     spark_properties:
       driver_node_type_id: "Standard_DS4_v2"
