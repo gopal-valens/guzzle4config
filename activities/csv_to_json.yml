@@ -1,7 +1,7 @@
 version: 1
 job:
   type: "ingestion"
-  description: "Special desc"
+  description: "Special descd"
 source:
   endpoint: "lo_dbfs"
   properties:
