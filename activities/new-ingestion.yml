@@ -1,7 +1,19 @@
 version: 1
 job:
   type: "ingestion"
+source:
+  endpoint: "lo_hive"
+  properties:
+    table: "employee"
+    format_properties:
+      clean_column_name: false
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
   discard: true
+target:
+  endpoint: "lo_hive"
+  properties:
+    table: "target_employee"
+    auto_create_table: true
+  operation: "append"
