@@ -1,8 +1,7 @@
 version: 1
 description: ""
-parallel: 1
 properties:
-  auto_dependency: false
+  auto_dependency: true
   pipeline_type: "databricks_multitask"
 jobs:
 - csv_to_json:
