@@ -14,11 +14,8 @@ schema:
   discard: true
   columns: []
 target:
-  endpoint: "lo_dbfs"
+  endpoint: "lo_hive"
   properties:
-    format: "json"
-    charset: "UTF-8"
-    path: "json_tgt/users1/"
-    preserve_hierarchy: false
-    format_properties:
-      merge_file: true
+    table: "users2"
+    auto_create_table: true
+  operation: "overwrite"
