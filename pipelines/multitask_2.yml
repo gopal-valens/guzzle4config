@@ -9,7 +9,7 @@ jobs:
       param1: "value1"
       param2: "value2"
     spark_properties:
-      job_compute_key: "shared_compute"
+      job_compute_key: "compute_1"
 - csv_to_json_copy1:
     job_parameters:
       param3: "value3"
@@ -19,7 +19,7 @@ jobs:
     job_parameters:
       param4: "value4"
     spark_properties:
-      job_compute_key: "compute_1"
+      job_compute_key: "shared_compute"
 - "csv_to_json_copy4"
 computes:
 - name: "shared_compute"
