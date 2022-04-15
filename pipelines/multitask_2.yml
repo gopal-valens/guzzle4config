@@ -21,6 +21,7 @@ jobs:
       param4: "value4"
     spark_properties:
       job_compute_key: "compute_1"
+- "csv_to_json_copy4"
 computes:
 - name: "shared_compute"
   properties:
