@@ -20,7 +20,7 @@ jobs:
     job_parameters:
       param4: "value4"
     spark_properties:
-      job_compute_key: "shared_compute"
+      job_compute_key: "compute_1"
 computes:
 - name: "shared_compute"
   properties:
@@ -29,3 +29,12 @@ computes:
     node_type_id: "Standard_DS3_v2"
     workers:
       num_workers: "1"
+- name: "compute_1"
+  properties:
+    spark_version: "9.1.x-scala2.12"
+    driver_node_type_id: "Standard_DS3_v2"
+    node_type_id: "Standard_DS3_v2"
+    workers:
+      num_workers: "1"
+    cluster_tags:
+      multitaskjob: "guzzle"
