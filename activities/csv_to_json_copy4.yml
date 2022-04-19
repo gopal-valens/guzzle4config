@@ -22,3 +22,4 @@ target:
     table: "users4"
     auto_create_table: true
   operation: "append"
+folder: "/dependency_test"
