@@ -5,7 +5,7 @@ job:
 source:
   endpoint: "lo_hive"
   properties:
-    table: "users"
+    table: "users4"
     format_properties:
       clean_column_name: false
     table_dependency:
@@ -19,7 +19,7 @@ schema:
 target:
   endpoint: "lo_hive"
   properties:
-    table: "users4"
+    table: "users5"
     auto_create_table: true
   operation: "append"
 folder: "/dependency_test"
