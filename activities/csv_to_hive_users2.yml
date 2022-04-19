@@ -5,7 +5,7 @@ job:
 source:
   endpoint: "lo_dbfs"
   properties:
-    source_file_pattern: "csv/users1.csv"
+    source_file_pattern: "csv/users2.csv"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
@@ -28,7 +28,7 @@ schema:
 target:
   endpoint: "lo_hive"
   properties:
-    table: "users"
+    table: "users4"
     auto_create_table: true
   operation: "append"
 reject:
