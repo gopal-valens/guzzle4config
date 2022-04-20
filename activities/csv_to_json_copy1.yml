@@ -18,7 +18,6 @@ schema:
 target:
   endpoint: "lo_hive"
   properties:
-    table: "users3"
     auto_create_table: true
   operation: "overwrite"
 folder: "/dependency_test"
