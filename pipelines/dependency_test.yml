@@ -1,44 +1,19 @@
 version: 1
 description: ""
+parallel: 1
 properties:
   auto_dependency: true
-  pipeline_type: "databricks_multitask"
 jobs:
 - csv_to_json:
     job_parameters:
       param1: "value1"
       param2: "value2"
-    spark_properties:
-      job_compute_key: "compute_1"
 - csv_to_json_copy1:
     job_parameters:
       param3: "value3"
-    spark_properties:
-      job_compute_key: "shared_compute"
 - csv_to_json_copy2:
     job_parameters:
       param4: "value4"
-    spark_properties:
-      job_compute_key: "shared_compute"
-- csv_to_json_copy3:
-    spark_properties:
-      job_compute_key: "shared_compute"
+- "csv_to_json_copy3"
 - "csv_to_json_copy4"
 - "csv_to_hive_users2"
-computes:
-- name: "shared_compute"
-  properties:
-    spark_version: "9.1.x-scala2.12"
-    driver_node_type_id: "Standard_DS3_v2"
-    node_type_id: "Standard_DS3_v2"
-    workers:
-      num_workers: "1"
-- name: "compute_1"
-  properties:
-    spark_version: "9.1.x-scala2.12"
-    driver_node_type_id: "Standard_DS3_v2"
-    node_type_id: "Standard_DS3_v2"
-    workers:
-      num_workers: "1"
-    cluster_tags:
-      multitaskjob: "guzzle"
