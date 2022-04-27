@@ -14,11 +14,16 @@ jobs:
       target: "users2"
 - hive_to_hive:
     job_parameters:
-      param3: "value3"
-- csv_to_json_copy2:
+      source: "users"
+      target: "users3"
+- hive_to_hive:
     job_parameters:
-      param4: "value4"
-- "csv_to_json_copy3"
+      source: "users"
+      target: "users4"
+- hive_to_hive:
+    job_parameters:
+      source: "users3"
+      target: "users4"
 - "csv_to_json_copy4"
 - "csv_to_hive_users2"
 folder: "/guzzle_pipeline"
