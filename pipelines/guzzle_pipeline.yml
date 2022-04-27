@@ -6,7 +6,7 @@ properties:
 jobs:
 - csv_to_json:
     job_parameters:
-      sourcefile: "users1.csv"
+      source: "users1.csv"
       target: "users"
 - csv_to_json_copy1:
     job_parameters:
