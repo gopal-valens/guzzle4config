@@ -6,13 +6,8 @@ properties:
 jobs:
 - csv_to_json:
     job_parameters:
-      param1: "value1"
-      param2: "value2"
-    retry_properties:
-      max_retry: 2
-      retry_interval: 10
-      retry_status:
-      - "FAILED"
+      sourcefile: "users1.csv"
+      target: "users"
 - csv_to_json_copy1:
     job_parameters:
       param3: "value3"
