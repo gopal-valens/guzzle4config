@@ -16,7 +16,7 @@ jobs:
       param3: "value3"
     spark_properties:
       job_compute_key: "compute_2"
-- csv_to_json_copy1:
+- hive_to_hive:
     job_parameters:
       param4: "value4"
     spark_properties:

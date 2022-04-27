@@ -13,7 +13,7 @@ jobs:
       retry_interval: 10
       retry_status:
       - "FAILED"
-- csv_to_json_copy1:
+- hive_to_hive:
     job_parameters:
       param3: "value3"
     spark_properties:
