@@ -8,18 +8,12 @@ jobs:
     job_parameters:
       source: "users1.csv"
       target: "users"
-- csv_to_hive:
-    job_parameters:
-      source: "users2.csv"
-      target: "users2"
+- "csv_to_hive_users2"
 - hive_to_hive:
     job_parameters:
       source: "users"
       target: "users3"
-- hive_to_hive:
-    job_parameters:
-      source: "users"
-      target: "users4"
+- "hive_to_hive_user4"
 - hive_to_hive:
     job_parameters:
       source: "users3"
