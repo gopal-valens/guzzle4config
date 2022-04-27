@@ -4,11 +4,11 @@ parallel: 2
 properties:
   auto_dependency: true
 jobs:
-- csv_to_json:
+- csv_to_hive:
     job_parameters:
       source: "users1.csv"
       target: "users"
-- csv_to_json:
+- csv_to_hive:
     job_parameters:
       source: "users2.csv"
       target: "users2"

@@ -4,7 +4,7 @@ properties:
   auto_dependency: true
   pipeline_type: "databricks_multitask"
 jobs:
-- csv_to_json:
+- csv_to_hive:
     job_parameters:
       param1: "value1"
       param2: "value2"

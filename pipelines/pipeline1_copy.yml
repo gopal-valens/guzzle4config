@@ -4,4 +4,4 @@ parallel: 1
 properties:
   auto_dependency: false
 jobs:
-- "csv_to_json"
+- "csv_to_hive"
