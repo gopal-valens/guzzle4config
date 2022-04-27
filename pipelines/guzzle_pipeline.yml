@@ -25,5 +25,5 @@ jobs:
       source: "users3"
       target: "users4"
 - "csv_to_json_copy4"
-- "csv_to_hive_users2"
+- "csv_to_hive_users4"
 folder: "/guzzle_pipeline"
