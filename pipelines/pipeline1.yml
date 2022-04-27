@@ -2,12 +2,14 @@ version: 1
 description: ""
 parallel: 1
 properties:
-  auto_dependency: false
+  auto_dependency: true
 jobs:
 - csv_to_json:
     job_parameters:
       param1: "value1"
       param2: "value2"
+    spark_properties:
+      spark_version: "10.4.x-scala2.12"
 - csv_to_json_copy2:
     job_parameters:
       param3: "value3"
