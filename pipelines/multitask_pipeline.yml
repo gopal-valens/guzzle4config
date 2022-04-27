@@ -2,30 +2,25 @@ version: 1
 description: ""
 parallel: 1
 properties:
-  auto_dependency: false
+  auto_dependency: true
   pipeline_type: "databricks_multitask"
 jobs:
-- processing_test:
+- csv_to_hive:
     job_parameters:
-      param1: "value1"
-      param2: "value2"
-    spark_properties:
-      job_compute_key: "compute_1"
-- csv_to_json_copy2:
-    job_parameters:
-      param3: "value3"
-    spark_properties:
-      job_compute_key: "compute_2"
+      source: "users1.csv"
+      target: "users"
+- "csv_to_hive_users2"
 - hive_to_hive:
     job_parameters:
-      param4: "value4"
-    spark_properties:
-      cluster_id: "0228-044814-pdvpv8h3"
-- column_mapping_test:
-    spark_properties:
-      driver_node_type_id: "Standard_DS4_v2"
-      node_type_id: "Standard_DS4_v2"
-- "local_csv_to_json"
+      source: "users"
+      target: "users3"
+- "hive_to_hive_users4"
+- hive_to_hive:
+    job_parameters:
+      source: "users3"
+      target: "users4"
+- "hive_to_hive_users5"
+- "csv_to_hive_users4"
 computes:
 - name: "compute_1"
   properties:
