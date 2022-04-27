@@ -22,3 +22,4 @@ jobs:
 - "csv_to_json_copy3"
 - "csv_to_json_copy4"
 - "csv_to_hive_users2"
+folder: "/guzzle_pipeline"
