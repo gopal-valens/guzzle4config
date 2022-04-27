@@ -13,7 +13,7 @@ jobs:
     job_parameters:
       source: "users"
       target: "users3"
-- "hive_to_hive_user4"
+- "hive_to_hive_users4"
 - hive_to_hive:
     job_parameters:
       source: "users3"
