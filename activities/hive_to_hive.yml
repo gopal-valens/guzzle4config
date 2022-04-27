@@ -8,8 +8,6 @@ source:
     table: "${source}"
     format_properties:
       clean_column_name: false
-    table_dependency:
-    - "users"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
