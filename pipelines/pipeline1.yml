@@ -3,7 +3,6 @@ description: ""
 parallel: 1
 properties:
   auto_dependency: false
-  pipeline_type: "databricks_multitask"
 jobs:
 - csv_to_json:
     job_parameters:
