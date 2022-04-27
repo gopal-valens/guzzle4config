@@ -13,3 +13,4 @@ jobs:
 - csv_to_json_copy2:
     job_parameters:
       param3: "value3"
+- "blob-to-hive"
