@@ -4,8 +4,8 @@ context_stage_mappings:
   stages:
   - name: "SRI"
     job_groups:
-    - "guzzle_pipeline"
     - "pipeline1"
+    - "guzzle_pipeline"
   - name: "FND"
     job_groups:
     - "pipeline2"
