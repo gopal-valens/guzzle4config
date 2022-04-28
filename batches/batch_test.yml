@@ -3,7 +3,7 @@ context_stage_mappings:
 - context: {}
   stages:
   - name: "SRI"
-    partial_load: true
+    partial_load: false
     job_groups:
     - "pipeline1"
     - "guzzle_pipeline"
