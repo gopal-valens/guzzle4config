@@ -1,16 +1,14 @@
 version: 1
 description: ""
-parallel: 1
+parallel: 2
 properties:
   auto_dependency: false
 jobs:
 - csv_to_hive:
     job_parameters:
-      param1: "value1"
-      param2: "value2"
-    spark_properties:
-      spark_version: "10.4.x-scala2.12"
-- csv_to_json_copy2:
+      source: "users1.csv"
+      target: "users"
+- hive_to_hive:
     job_parameters:
-      param3: "value3"
-- "blob-to-hive"
+      source: "users"
+      target: "users3"
