@@ -21,10 +21,7 @@ schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
   discard: true
-  columns:
-  - name: "age"
-    nullable:
-      value: false
+  columns: []
 target:
   endpoint: "lo_hive"
   properties:
