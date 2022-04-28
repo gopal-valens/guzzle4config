@@ -4,6 +4,11 @@ parallel: 2
 properties:
   auto_dependency: false
 jobs:
-- "survey-2020"
-- "csv_to_json_copy2"
-spark_properties: {}
+- csv_to_hive:
+    job_parameters:
+      source: "users2.csv"
+      target: "users"
+- hive_to_hive:
+    job_parameters:
+      source: "users"
+      target: "users2"
