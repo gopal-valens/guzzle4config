@@ -8,11 +8,18 @@ jobs:
     job_parameters:
       source: "users1.csv"
       target: "users"
-- "csv_to_hive_users2"
+    spark_properties:
+      driver_node_type_id: "Standard_DS4_v2"
+      node_type_id: "Standard_DS3_v2"
+- csv_to_hive_users2:
+    spark_properties:
+      spark_version: "10.1.x-scala2.12"
 - hive_to_hive:
     job_parameters:
       source: "users"
       target: "users3"
+    spark_properties:
+      cluster_id: "0228-044814-pdvpv8h3"
 - "hive_to_hive_users4"
 - hive_to_hive:
     job_parameters:
@@ -20,4 +27,6 @@ jobs:
       target: "users4"
 - "hive_to_hive_users5"
 - "csv_to_hive_users4"
+spark_properties:
+  spark_version: "10.4.x-scala2.12"
 folder: "/guzzle_pipeline"
