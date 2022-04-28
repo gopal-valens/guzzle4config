@@ -8,6 +8,11 @@ jobs:
     job_parameters:
       source: "users1.csv"
       target: "users"
+    retry_properties:
+      max_retry: 2
+      retry_interval: 10
+      retry_status:
+      - "FAILED"
 - "csv_to_hive_users2"
 - hive_to_hive:
     job_parameters:
