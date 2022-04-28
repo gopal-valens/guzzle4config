@@ -8,9 +8,6 @@ jobs:
     job_parameters:
       source: "users1.csv"
       target: "users"
-    spark_properties:
-      driver_node_type_id: "Standard_DS4_v2"
-      node_type_id: "Standard_DS3_v2"
 - csv_to_hive_users2:
     spark_properties:
       spark_version: "10.1.x-scala2.12"
