@@ -1,8 +1,8 @@
 version: 1
 description: ""
-parallel: 10
+parallel: 1
 properties:
-  auto_dependency: true
+  auto_dependency: false
 jobs:
 - csv_to_hive:
     job_parameters:
