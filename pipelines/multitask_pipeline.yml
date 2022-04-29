@@ -27,7 +27,9 @@ jobs:
       target: "users4"
     spark_properties:
       job_compute_key: "shared_cluster"
-- "hive_to_hive_users5"
+- hive_to_hive_users5:
+    spark_properties:
+      job_compute_key: "shared_cluster"
 - csv_to_hive_users4:
     spark_properties:
       cluster_id: "0228-044814-pdvpv8h3"
