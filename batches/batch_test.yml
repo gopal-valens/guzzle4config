@@ -5,7 +5,6 @@ context_stage_mappings:
   - name: "SRI"
     partial_load: true
     job_groups:
-    - "pipeline1"
     - "multitask_pipeline"
   - name: "FND"
     rerun_batch: false
