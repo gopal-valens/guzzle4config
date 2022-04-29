@@ -5,9 +5,11 @@ job:
 source:
   endpoint: "lo_hive"
   properties:
-    table: "users4"
+    table: "users4zzzz"
     format_properties:
       clean_column_name: false
+    table_dependency:
+    - "users4"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
