@@ -9,28 +9,8 @@ jobs:
     job_parameters:
       source: "users1.csv"
       target: "users"
-- hive_to_hive:
-    job_parameters:
-      source: "users"
-      target: "users3"
-- hive_to_hive:
-    job_parameters:
-      source: "users3"
-      target: "users4"
-    spark_properties:
-      spark_version: "10.3.x-scala2.12"
-- hive_to_hive_users5:
-    spark_properties:
-      job_compute_key: "shared1"
+- hive_to_hive_users5: {}
 - "hive_to_hive_users4"
-computes:
-- name: "shared1"
-  properties:
-    spark_version: "9.1.x-scala2.12"
-    driver_node_type_id: "Standard_DS3_v2"
-    node_type_id: "Standard_DS3_v2"
-    workers:
-      num_workers: "1"
 spark_properties:
   spark_version: "10.4.x-scala2.12"
 folder: "/multitask_pipeline"
