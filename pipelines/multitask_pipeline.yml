@@ -10,7 +10,7 @@ jobs:
       source: "users1.csv"
       target: "users"
     spark_properties:
-      job_compute_key: "cluster1"
+      job_compute_key: "shared_cluster"
 - "csv_to_hive_users2"
 - hive_to_hive:
     job_parameters:
