@@ -3,12 +3,12 @@ context_stage_mappings:
 - context: {}
   stages:
   - name: "SRI"
-    partial_load: false
+    partial_load: true
     job_groups:
     - "pipeline1"
     - "multitask_pipeline"
   - name: "FND"
     rerun_batch: false
-    partial_load: false
+    partial_load: true
     job_groups:
     - "pipeline2"
