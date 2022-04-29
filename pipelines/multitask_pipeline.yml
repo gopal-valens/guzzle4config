@@ -2,7 +2,7 @@ version: 1
 description: ""
 parallel: 1
 properties:
-  auto_dependency: false
+  auto_dependency: true
   pipeline_type: "databricks_multitask"
 jobs:
 - csv_to_hive:
@@ -11,6 +11,5 @@ jobs:
       target: "users"
 - hive_to_hive_users5: {}
 - "hive_to_hive_users4"
-spark_properties:
-  spark_version: "10.4.x-scala2.12"
+spark_properties: {}
 folder: "/multitask_pipeline"
