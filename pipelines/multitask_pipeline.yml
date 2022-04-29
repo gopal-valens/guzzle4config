@@ -27,7 +27,9 @@ jobs:
     spark_properties:
       job_compute_key: "activity-shared"
 - "hive_to_hive_users5"
-- "hive_to_hive_users4"
+- hive_to_hive_users4:
+    spark_properties:
+      job_compute_key: "activity-shared"
 computes:
 - name: "cluster1"
   properties:
