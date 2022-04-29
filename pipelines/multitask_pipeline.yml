@@ -14,6 +14,5 @@ jobs:
       param1: "value1"
 - hive_to_hive_users4: {}
 - "csv_to_hive_users2"
-- "external-test"
 spark_properties: {}
 folder: "/multitask_pipeline"
