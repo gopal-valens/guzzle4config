@@ -9,7 +9,9 @@ jobs:
     job_parameters:
       source: "users1.csv"
       target: "users"
-- hive_to_hive_users5: {}
+- hive_to_hive_users5:
+    job_parameters:
+      param1: "value1"
 - hive_to_hive_users4: {}
 - "csv_to_hive_users2"
 spark_properties: {}
