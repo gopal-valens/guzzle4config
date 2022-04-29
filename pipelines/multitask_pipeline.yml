@@ -13,7 +13,7 @@ jobs:
 - hive_to_hive_users4:
     retry_properties:
       max_retry: 3
-      retry_interval: 30
+      retry_interval: 10
       retry_status:
       - "FAILED"
 - "csv_to_hive_users2"
