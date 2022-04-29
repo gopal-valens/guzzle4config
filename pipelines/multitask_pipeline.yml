@@ -2,7 +2,7 @@ version: 1
 description: ""
 parallel: 1
 properties:
-  auto_dependency: false
+  auto_dependency: true
   pipeline_type: "databricks_multitask"
 jobs:
 - csv_to_hive:
@@ -16,5 +16,6 @@ jobs:
       retry_interval: 30
       retry_status:
       - "FAILED"
+- "csv_to_hive_users2"
 spark_properties: {}
 folder: "/multitask_pipeline"
