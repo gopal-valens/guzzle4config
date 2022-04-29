@@ -5,7 +5,7 @@ job:
 source:
   endpoint: "lo_hive"
   properties:
-    table: "xxusers"
+    table: "users"
     format_properties:
       clean_column_name: false
     table_dependency:
