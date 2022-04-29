@@ -10,12 +10,7 @@ jobs:
       source: "users1.csv"
       target: "users"
 - hive_to_hive_users5: {}
-- hive_to_hive_users4:
-    retry_properties:
-      max_retry: 3
-      retry_interval: 10
-      retry_status:
-      - "FAILED"
+- hive_to_hive_users4: {}
 - "csv_to_hive_users2"
 spark_properties: {}
 folder: "/multitask_pipeline"
