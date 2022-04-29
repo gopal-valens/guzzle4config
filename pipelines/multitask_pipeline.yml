@@ -9,13 +9,27 @@ jobs:
     job_parameters:
       source: "users1.csv"
       target: "users"
-- hive_to_hive_users5: {}
+    spark_properties:
+      job_compute_key: "shared-cp"
+- hive_to_hive_users5:
+    spark_properties:
+      job_compute_key: "shared-cp"
 - hive_to_hive_users4:
     retry_properties:
       max_retry: 3
       retry_interval: 30
       retry_status:
       - "FAILED"
+    spark_properties:
+      job_compute_key: "shared-cp"
 - "csv_to_hive_users2"
+computes:
+- name: "shared-cp"
+  properties:
+    spark_version: "10.4.x-scala2.12"
+    driver_node_type_id: "Standard_DS3_v2"
+    node_type_id: "Standard_DS3_v2"
+    workers:
+      num_workers: "1"
 spark_properties: {}
 folder: "/multitask_pipeline"
