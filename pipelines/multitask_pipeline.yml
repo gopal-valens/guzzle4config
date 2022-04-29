@@ -14,9 +14,5 @@ jobs:
       source: "users"
       target: "users3"
 - "hive_to_hive_users4"
-- hive_to_hive:
-    job_parameters:
-      source: "users3"
-      target: "users4"
 - "hive_to_hive_users5"
 folder: "/multitask_pipeline"
