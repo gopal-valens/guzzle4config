@@ -9,10 +9,18 @@ jobs:
     job_parameters:
       source: "users1.csv"
       target: "users"
+- csv_to_hive:
+    job_parameters:
+      source: "users2.csv"
+      target: "users"
+- csv_to_hive:
+    job_parameters:
+      source: "users*csv"
+      target: "users"
 - hive_to_hive_users5:
     job_parameters:
       param1: "value1"
-- hive_to_hive_users4: {}
+- "hive_to_hive_users4"
 - "csv_to_hive_users2"
 spark_properties: {}
 folder: "/multitask_pipeline"
