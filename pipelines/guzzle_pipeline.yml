@@ -10,7 +10,7 @@ jobs:
       target: "users3"
 - csv_to_hive:
     job_parameters:
-      source: "users3"
+      source: "users2.csv"
       target: "users4"
 - "hive_to_hive_users5"
 - "csv_to_hive_users4"
