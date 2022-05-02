@@ -2,21 +2,18 @@ version: 1
 description: ""
 parallel: 1
 properties:
-  auto_dependency: false
+  auto_dependency: true
   pipeline_type: "databricks_multitask"
 jobs:
 - csv_to_hive:
+    job_parameters: {}
+- csv_to_hive:
     job_parameters:
-      source: "users1.csv"
       target: "users"
 - csv_to_hive:
     job_parameters:
       source: "users2.csv"
-      target: "users"
-- csv_to_hive:
-    job_parameters:
-      source: "users*csv"
-      target: "users"
+      target: "activity_users"
 - hive_to_hive_users5:
     job_parameters:
       param1: "value1"
