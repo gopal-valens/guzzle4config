@@ -6,18 +6,8 @@ properties:
   pipeline_type: "databricks_multitask"
 jobs:
 - csv_to_hive:
-    job_parameters: {}
-- csv_to_hive:
     job_parameters:
       target: "users"
-- csv_to_hive:
-    job_parameters:
-      source: "users2.csv"
-      target: "activity_users"
-- hive_to_hive_users5:
-    job_parameters:
-      param1: "value1"
 - "hive_to_hive_users4"
-- "csv_to_hive_users2"
 spark_properties: {}
 folder: "/multitask_pipeline"
