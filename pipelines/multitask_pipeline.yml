@@ -19,7 +19,7 @@ computes:
     spark_version: "10.4.x-scala2.12"
     workers:
       num_workers: "1"
-    instance_pool_id: "${cluster_pool_id}"
+    instance_pool_id: "${cluster_pool}"
 - name: "compute_2"
   properties:
     spark_version: "9.1.x-scala2.12"
