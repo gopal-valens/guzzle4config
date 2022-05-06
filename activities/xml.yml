@@ -11,8 +11,8 @@ source:
     format_properties:
       infer_schema: false
       clean_column_name: true
-      root_tag: "ROWS"
-      row_tag: "ROW"
+      root_tag: "users"
+      row_tag: "user"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
