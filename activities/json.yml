@@ -20,6 +20,6 @@ schema:
 target:
   endpoint: "lo_hive"
   properties:
-    table: "json_users"
+    table: "json_users_1"
     auto_create_table: true
   operation: "append"
