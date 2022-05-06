@@ -9,7 +9,7 @@ source:
     charset: "UTF-8"
     partial_load: false
     format_properties:
-      infer_schema: false
+      infer_schema: true
       clean_column_name: true
       root_tag: "users"
       row_tag: "user"
