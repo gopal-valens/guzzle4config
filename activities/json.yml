@@ -11,7 +11,7 @@ source:
     format_properties:
       clean_column_name: false
       multiline: true
-      primitives_as_string: false
+      primitives_as_string: true
       sampling_ratio: 100
 schema:
   schema_derivation_strategy: "source"
