@@ -10,7 +10,7 @@ source:
     partial_load: false
     format_properties:
       clean_column_name: false
-      multiline: true
+      multiline: false
       primitives_as_string: true
       sampling_ratio: 100
 schema:
