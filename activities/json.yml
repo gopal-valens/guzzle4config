@@ -4,7 +4,7 @@ job:
 source:
   endpoint: "lo_dbfs"
   properties:
-    source_file_pattern: "/json/users1.json"
+    source_file_pattern: "/json/target/users1.json"
     format: "json"
     charset: "UTF-8"
     partial_load: false
