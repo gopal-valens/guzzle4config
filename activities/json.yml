@@ -4,15 +4,15 @@ job:
 source:
   endpoint: "lo_dbfs"
   properties:
-    source_file_pattern: "/json/target/users1.json"
+    source_file_pattern: "/json/users1.json"
     format: "json"
     charset: "UTF-8"
     partial_load: false
     format_properties:
       clean_column_name: false
       multiline: false
-      primitives_as_string: true
-      sampling_ratio: 1
+      primitives_as_string: false
+      sampling_ratio: 100
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
