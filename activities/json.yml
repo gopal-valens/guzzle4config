@@ -4,7 +4,7 @@ job:
 source:
   endpoint: "lo_dbfs"
   properties:
-    source_file_pattern: "users*json"
+    source_file_pattern: "/json/users1.json"
     format: "json"
     charset: "UTF-8"
     partial_load: false
@@ -20,6 +20,6 @@ schema:
 target:
   endpoint: "lo_hive"
   properties:
-    table: "tt2"
+    table: "json_users"
     auto_create_table: true
   operation: "append"
