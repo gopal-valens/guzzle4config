@@ -15,3 +15,9 @@ schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
   discard: true
+target:
+  endpoint: "lo_hive"
+  properties:
+    table: "tt2"
+    auto_create_table: true
+  operation: "append"
