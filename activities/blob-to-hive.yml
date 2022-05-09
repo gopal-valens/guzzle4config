@@ -21,12 +21,8 @@ schema:
   strict_schema_check: true
   discard: true
 target:
-  endpoint: "lo_lfs"
+  endpoint: "lo_hive"
   properties:
-    format: "xml"
-    charset: "UTF-8"
-    preserve_hierarchy: false
-    format_properties:
-      merge_file: false
-      root_tag: "ROWS"
-      row_tag: "ROW"
+    table: "employee_one"
+    auto_create_table: true
+  operation: "append"
