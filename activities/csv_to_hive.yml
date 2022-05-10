@@ -25,6 +25,8 @@ schema:
   - name: "updated_time"
     transform_sql:
       value: "current_timestamp"
+    data_type:
+      value: "timestamp"
     nullable:
       value: true
 target:
