@@ -1,6 +1,6 @@
 version: 1
 description: ""
-parallel: 3
+parallel: 1
 properties:
   auto_dependency: false
 jobs:
@@ -12,6 +12,4 @@ jobs:
     job_parameters:
       source: "users2.csv"
       target: "users4"
-- "hive_to_hive_users5"
-- "csv_to_hive_users4"
 folder: "/guzzle_pipeline"
