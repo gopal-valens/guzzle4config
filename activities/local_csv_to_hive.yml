@@ -3,7 +3,7 @@ job:
   type: "ingestion"
   description: "Special descd"
 source:
-  endpoint: "lo_dbfs"
+  endpoint: "lo_lfs"
   properties:
     source_file_pattern: "csv/${source}"
     format: "delimited"
@@ -23,11 +23,14 @@ schema:
   discard: true
   columns: []
 target:
-  endpoint: "lo_hive"
+  endpoint: "lo_lfs"
   properties:
-    table: "${target}"
-    auto_create_table: true
-  operation: "append"
+    format: "json"
+    charset: "UTF-8"
+    path: "/output/json/"
+    preserve_hierarchy: false
+    format_properties:
+      merge_file: false
 reject:
   endpoint: "lo_hive"
   properties:
