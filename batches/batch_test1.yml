@@ -1,0 +1,14 @@
+version: 1
+context_stage_mappings:
+- context: {}
+  stages:
+  - name: "SRI"
+    partial_load: false
+    job_groups:
+    - "pipeline1"
+    - "guzzle_pipeline"
+  - name: "FND"
+    rerun_batch: false
+    partial_load: false
+    job_groups:
+    - "pipeline2"
