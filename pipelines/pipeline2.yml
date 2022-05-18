@@ -6,7 +6,7 @@ properties:
 jobs:
 - csv_to_hive:
     job_parameters:
-      source: "users2.csv"
+      source: "users2.csvxxx"
       target: "users"
 - hive_to_hive:
     job_parameters:
