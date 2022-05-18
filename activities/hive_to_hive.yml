@@ -5,7 +5,7 @@ job:
 source:
   endpoint: "lo_hive"
   properties:
-    query: "select current_timestamp as refresh_ts"
+    query: "${source}"
     format_properties:
       clean_column_name: false
 schema:
