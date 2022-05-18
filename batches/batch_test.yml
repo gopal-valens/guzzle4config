@@ -6,7 +6,7 @@ context_stage_mappings:
     partial_load: true
     job_groups:
     - "pipeline1"
-    - "multitask_pipeline"
+    - "guzzle_pipeline"
   - name: "FND"
     rerun_batch: false
     partial_load: true
