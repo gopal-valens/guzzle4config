@@ -9,6 +9,6 @@ context_stage_mappings:
     - "guzzle_pipeline"
   - name: "FND"
     rerun_batch: false
-    partial_load: true
+    partial_load: false
     job_groups:
     - "pipeline2"
