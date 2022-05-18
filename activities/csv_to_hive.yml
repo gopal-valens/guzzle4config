@@ -21,14 +21,7 @@ schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
   discard: true
-  columns:
-  - name: "updated_time"
-    transform_sql:
-      value: "current_timestamp"
-    data_type:
-      value: "timestamp"
-    nullable:
-      value: true
+  columns: []
 target:
   endpoint: "lo_hive"
   properties:
