@@ -12,3 +12,9 @@ context_stage_mappings:
     partial_load: false
     job_groups:
     - "pipeline2"
+  - name: "UCL"
+    job_groups:
+    - "pipeline1"
+  - name: "OUT"
+    job_groups:
+    - "pipeline1"
