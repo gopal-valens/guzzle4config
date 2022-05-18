@@ -10,5 +10,5 @@ jobs:
       target: "users"
 - hive_to_hive:
     job_parameters:
-      source: "users"
+      source: "usersxxxx"
       target: "users3"
