@@ -22,6 +22,6 @@ schema:
 target:
   endpoint: "lo_hive"
   properties:
-    table: "employee_two"
+    table: "employee_two1"
     auto_create_table: true
   operation: "append"
