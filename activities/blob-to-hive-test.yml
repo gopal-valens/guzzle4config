@@ -4,6 +4,7 @@ job:
 source:
   endpoint: "blob"
   properties:
+    source_file_pattern: "lkjl"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
