@@ -4,7 +4,6 @@ job:
 source:
   endpoint: "blob"
   properties:
-    source_file_pattern: "zsfsds"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
