@@ -1,3 +1,10 @@
 version: 1
 job:
   type: "external"
+config:
+  endpoint: "databricks"
+  properties:
+    run_name: "guzzle_notebook"
+    task: "notebook"
+    task_properties:
+      notebook_path: "/Users/gopal.ghanghar@justanalytics.com/notebook_test"
