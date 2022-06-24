@@ -7,4 +7,4 @@ config:
     run_name: "guzzle_notebook"
     task: "notebook"
     task_properties:
-      notebook_path: "/Users/gopal.ghanghar@justanalytics.com/notebook_test2"
+      notebook_path: "/Users/gopal.ghanghar@justanalytics.com/notebook_test"
