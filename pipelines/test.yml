@@ -1,6 +1,40 @@
 version: 1
 description: ""
 parallel: 1
-properties: {}
-jobs: []
+properties:
+  auto_dependency: true
+jobs:
+- csv_to_hive:
+    job_parameters:
+      source: "employee.csv"
+      target: "users1"
+- csv_to_hive:
+    job_parameters:
+      source: "employee.csv"
+      target: "users2"
+- csv_to_hive:
+    job_parameters:
+      source: "employee.csv"
+      target: "users3"
+- csv_to_hive:
+    job_parameters:
+      source: "employee.csv"
+      target: "users4"
+- hive_to_hive:
+    job_parameters:
+      source: "users2"
+      target: "users5"
+- hive_to_hive:
+    job_parameters:
+      source: "users3"
+      target: "users6"
+- hive_to_hive:
+    job_parameters:
+      source: "users5"
+      target: "users7"
+- hive_to_hive:
+    job_parameters:
+      source: "users6"
+      target: "users7"
+- "hive_to_hive_users4"
 folder: "/dependency_test"
