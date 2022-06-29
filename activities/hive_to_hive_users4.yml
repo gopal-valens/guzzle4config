@@ -9,6 +9,7 @@ source:
     format_properties:
       clean_column_name: false
     table_dependency:
+    - "users4"
     - "users5"
     - "users6"
 schema:
