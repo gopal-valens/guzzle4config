@@ -12,6 +12,7 @@ jobs:
     job_parameters:
       source: "employee.csv"
       target: "users2"
+- "hive_to_hive_users4"
 - csv_to_hive:
     job_parameters:
       source: "employee.csv"
@@ -28,7 +29,6 @@ jobs:
     job_parameters:
       source: "users3"
       target: "users6"
-- "hive_to_hive_users4"
 - hive_to_hive_users5:
     job_parameters: {}
 folder: "/dependency_test"
