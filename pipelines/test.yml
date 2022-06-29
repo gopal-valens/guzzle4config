@@ -9,7 +9,7 @@ jobs:
 - "hive_to_hive_users4"
 - csv_to_hive:
     job_parameters:
-      source: "employee.csv"
+      source: "users*csv"
       target: "users4"
 - hive_to_hive:
     job_parameters:
@@ -21,14 +21,14 @@ jobs:
       target: "users5"
 - csv_to_hive:
     job_parameters:
-      source: "employee.csv"
+      source: "users*csv"
       target: "users3"
 - csv_to_hive:
     job_parameters:
-      source: "employee.csv"
+      source: "users*csv"
       target: "users2"
 - csv_to_hive:
     job_parameters:
-      source: "employee.csv"
+      source: "users*csv"
       target: "users1"
 folder: "/dependency_test"
