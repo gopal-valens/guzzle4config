@@ -9,9 +9,8 @@ source:
     format_properties:
       clean_column_name: false
     table_dependency:
-    - "users1"
     - "users5"
-    - "users7"
+    - "users6"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
@@ -20,7 +19,7 @@ schema:
 target:
   endpoint: "lo_hive"
   properties:
-    table: "users_final"
+    table: "users7"
     auto_create_table: true
   operation: "append"
 folder: "/dependency_test"
