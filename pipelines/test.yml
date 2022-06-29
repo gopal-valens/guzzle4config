@@ -4,17 +4,21 @@ parallel: 3
 properties:
   auto_dependency: true
 jobs:
-- csv_to_hive:
-    job_parameters:
-      source: "employee.csv"
-      target: "users1"
-- csv_to_hive:
-    job_parameters:
-      source: "employee.csv"
-      target: "users2"
-- "hive_to_hive_users4"
 - hive_to_hive_users5:
     job_parameters: {}
+- "hive_to_hive_users4"
+- csv_to_hive:
+    job_parameters:
+      source: "employee.csv"
+      target: "users4"
+- hive_to_hive:
+    job_parameters:
+      source: "users3"
+      target: "users6"
+- hive_to_hive:
+    job_parameters:
+      source: "users2"
+      target: "users5"
 - csv_to_hive:
     job_parameters:
       source: "employee.csv"
@@ -22,13 +26,9 @@ jobs:
 - csv_to_hive:
     job_parameters:
       source: "employee.csv"
-      target: "users4"
-- hive_to_hive:
+      target: "users2"
+- csv_to_hive:
     job_parameters:
-      source: "users2"
-      target: "users5"
-- hive_to_hive:
-    job_parameters:
-      source: "users3"
-      target: "users6"
+      source: "employee.csv"
+      target: "users1"
 folder: "/dependency_test"
