@@ -11,7 +11,7 @@ target:
   incremental: false
   soft_delete: false
   properties:
-    table: "${p_d2i_sri_db_th}.sri_${p_table_name}"
+    table: "p_users"
   additional_columns:
   - name: "w_job_instance_id"
     value: "${job_instance_id}"
