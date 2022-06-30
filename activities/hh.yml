@@ -1,3 +1,10 @@
 version: 1
 job:
   type: "housekeeping"
+housekeeping:
+  endpoint: "lo_delta"
+  properties:
+    table: "table1"
+  operation: "delete"
+  reference_point:
+    reference_type: "current_time"
