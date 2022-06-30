@@ -31,4 +31,8 @@ jobs:
       source: "users*csv"
       target: "users4"
 - "hive_to_hive_users4"
+- "blob-to-hive"
+- "notebook_external"
+- "processing_test"
+- "hh"
 folder: "/dependency_test"
