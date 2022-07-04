@@ -6,26 +6,11 @@ job:
 source:
   endpoint: "deltastore"
   properties:
-    sql: |-
-      select
-        f.*,
-        origin.airport_id origin_airport_id,
-        origin.airport origin_airport_name,
-        origin.city origin_airport_city,
-        origin.state origin_airports_state,
-        dest.airport_id dest_airport_id,
-        dest.airport dest_airport_name,
-        dest.city dest_airport_city,
-        dest.state dest_airports_state,
-        c.Description carrier_description
-      from
-        (select * from sri_flights where Year = '${year}')f
-        join d_airports origin on f.origin = origin.iata
-        join d_airports dest on f.dest = dest.iata
-        join d_carriers c on f.UniqueCarrier = c.code and c.is_current_record = 'Y'
+    sql: "select * from sri_flights where Year = '${year}'"
     pre_sql:
     - |-
-      CREATE TABLE if not exists  default.`f_flights` (
+      CREATE TABLE if not exists  default.`f_flights_2` (
+        `Id` STRING,
         `Year` STRING,
         `Month` STRING,
         `DayofMonth` STRING,
@@ -70,14 +55,18 @@ source:
       PARTITIONED BY (`Year`)
 target:
   endpoint: "deltastore"
-  operation: "overwrite"
+  operation: "effective_date_merge"
   incremental: false
-  soft_delete: false
   properties:
-    table: "f_flights"
+    table: "f_flights_2"
+  primary_key_columns:
+  - "Id"
   additional_columns:
   - name: "last_updated_ts"
     framework_column: "w_refresh_ts"
-  truncate_partition_columns:
-  - name: "Year"
-    value: "${year}"
+  - name: "create_date_ts"
+    framework_column: "w_created_ts"
+  - name: "eff_start_date_ts"
+    framework_column: "w_eff_start_date_ts"
+  - name: "eff_end_date_ts"
+    framework_column: "w_eff_end_date_ts"
