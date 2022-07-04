@@ -1,0 +1,17 @@
+version: 1
+job:
+  type: "constraint_checks"
+source:
+  endpoint: "deltastore"
+  primary_keys:
+  - "plane_id"
+  grouping_columns:
+  - "manufacturer"
+  - "year"
+  properties:
+    table: "d_planes"
+validation_rules:
+  Incorrect status:
+    sql: "status <> 'Valid'"
+  Invalid Distaince:
+    sql: "Distance <= 0 OR Distance is NULL"
