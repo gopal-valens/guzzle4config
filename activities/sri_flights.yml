@@ -59,10 +59,24 @@ schema:
       validate: false
     nullable:
       value: true
+  - name: "create_date_ts"
+    transform_sql:
+      value: "current_timestamp()"
+    data_type:
+      validate: false
+    nullable:
+      value: true
+  - name: "last_updated_ts"
+    transform_sql:
+      value: "current_timestamp()"
+    data_type:
+      validate: false
+    nullable:
+      value: true
 target:
   endpoint: "deltastore"
   properties:
-    table: "sri_flights"
+    table: "sri_flights_2"
     auto_create_table: true
     merge_schema: false
     overwrite_schema: false
@@ -71,5 +85,6 @@ reject:
   endpoint: "deltastore"
   failure_threshold: 20
   properties:
-    table: "sri_flights_dq"
+    table: "sri_flights_dq_2"
     auto_create_table: true
+    merge_schema: false
