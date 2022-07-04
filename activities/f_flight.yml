@@ -19,7 +19,7 @@ source:
         dest.state dest_airports_state,
         c.Description carrier_description
       from
-        sri_flights f
+        sri_flights f where Year = '${year}'
         join d_airports origin on f.origin = origin.iata
         join d_airports dest on f.dest = dest.iata
         join d_carriers c on f.UniqueCarrier = c.code and c.is_current_record = 'Y'
