@@ -52,11 +52,20 @@ schema:
       value: "Distance * 1.60"
     nullable:
       value: true
+  - name: "id"
+    transform_sql:
+      value: "uuid()"
+    data_type:
+      validate: false
+    nullable:
+      value: true
 target:
   endpoint: "deltastore"
   properties:
     table: "sri_flights"
     auto_create_table: true
+    merge_schema: false
+    overwrite_schema: false
   operation: "overwrite"
 reject:
   endpoint: "deltastore"
