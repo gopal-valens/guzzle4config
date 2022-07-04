@@ -49,7 +49,10 @@ source:
         `dest_airport_city` STRING,
         `dest_airports_state` STRING,
         carrier_description   string,
-        last_updated_ts timestamp
+        last_updated_ts timestamp,
+        create_date_ts timestamp,
+        eff_start_date_ts timestamp,
+        eff_end_date_ts timestamp
       )
       USING delta
       PARTITIONED BY (`Year`)
