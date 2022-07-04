@@ -67,6 +67,7 @@ source:
         last_updated_ts timestamp
       )
       USING delta
+      PARTITIONED BY (`Year`)
 target:
   endpoint: "deltastore"
   operation: "overwrite"
@@ -77,3 +78,6 @@ target:
   additional_columns:
   - name: "last_updated_ts"
     framework_column: "w_refresh_ts"
+  truncate_partition_columns:
+  - name: "Year"
+    value: "${year}"
