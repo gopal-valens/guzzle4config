@@ -1,5 +1,15 @@
 version: 1
 description: ""
-parallel: 1
-properties: {}
-jobs: []
+parallel: 3
+properties:
+  auto_dependency: false
+jobs:
+- d_planes:
+    job_parameters:
+      year: "2000"
+- d_planes:
+    job_parameters:
+      year: "2001"
+- d_planes:
+    job_parameters:
+      year: "2003"
