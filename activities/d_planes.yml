@@ -4,27 +4,9 @@ job:
 source:
   endpoint: "deltastore"
   properties:
-    table: "sri_planes"
+    sql: "select * from sri_planes where year = ${year}"
     pre_sql:
-    - |-
-      CREATE TABLE if not exists `default`.`d_planes` (
-        `plane_id` bigint,
-        `tailnum` STRING,
-        `type` STRING,
-        `manufacturer` STRING,
-        `issue_date` STRING,
-        `model` STRING,
-        `status` STRING,
-        `aircraft_type` STRING,
-        `engine_type` STRING,
-        `year` STRING,
-        is_current_record string,
-        created_ts timestamp,
-        last_update_ts timestamp,
-        eff_start_ts timestamp,
-        eff_end_ts timestamp
-        )
-      USING delta
+    - "CREATE TABLE if not exists `default`.`d_planes` (  `plane_id` bigint,  `tailnum` STRING,  `type` STRING,  `manufacturer` STRING,  `issue_date` STRING,  `model` STRING,  `status` STRING,  `aircraft_type` STRING,  `engine_type` STRING,  `year` STRING,  is_current_record string,  created_ts timestamp,  last_update_ts timestamp,  eff_start_ts timestamp,  eff_end_ts timestamp  ) PARTITIONED BY(`year`) USING delta"
 target:
   endpoint: "deltastore"
   operation: "effective_date_merge"
@@ -56,3 +38,6 @@ target:
     framework_column: "w_eff_end_date_ts"
   - name: "is_current_record"
     framework_column: "w_current_record_flag"
+  truncate_partition_columns:
+  - name: "year"
+    value: "${year}"
