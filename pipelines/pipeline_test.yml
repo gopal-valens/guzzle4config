@@ -4,12 +4,12 @@ parallel: 3
 properties:
   auto_dependency: false
 jobs:
-- d_planes:
+- f_flight:
     job_parameters:
-      year: "2000"
-- d_planes:
+      year: "1988"
+- f_flight:
     job_parameters:
-      year: "2001"
-- d_planes:
+      year: "1990"
+- f_flight:
     job_parameters:
-      year: "2003"
+      year: "1989"
