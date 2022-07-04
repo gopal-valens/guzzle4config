@@ -6,7 +6,7 @@ job:
 source:
   endpoint: "deltastore"
   properties:
-    sql: "select * from sri_flights where Year = '${year}'"
+    sql: "select * from sri_flights_2 where Year = '${year}'"
     pre_sql:
     - |-
       CREATE TABLE if not exists  default.`f_flights_2` (
