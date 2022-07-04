@@ -25,29 +25,10 @@ source:
         eff_end_ts timestamp
         )
       USING delta
-  incremental: false
-  additional_columns:
-  - name: "plane_id"
-    framework_column: "w_sequence_key"
-    framework_generated: true
-  - name: "created_ts"
-    framework_column: "w_created_ts"
-    framework_generated: true
-  - name: "last_update_ts"
-    framework_column: "w_refresh_ts"
-    framework_generated: true
-  - name: "eff_start_ts"
-    framework_column: "w_eff_start_date_ts"
-    framework_generated: true
-  - name: "eff_end_ts"
-    framework_column: "w_eff_end_date_ts"
-    framework_generated: true
-  - name: "is_current_record"
-    framework_column: "w_current_record_flag"
-    framework_generated: true
 target:
   endpoint: "deltastore"
   operation: "effective_date_merge"
+  incremental: false
   soft_delete: false
   properties:
     table: "d_planes"
@@ -62,3 +43,16 @@ target:
     - "year"
   primary_key_columns:
   - "tailnum"
+  additional_columns:
+  - name: "plane_id"
+    framework_column: "w_sequence_key"
+  - name: "created_ts"
+    framework_column: "w_created_ts"
+  - name: "last_update_ts"
+    framework_column: "w_refresh_ts"
+  - name: "eff_start_ts"
+    framework_column: "w_eff_start_date_ts"
+  - name: "eff_end_ts"
+    framework_column: "w_eff_end_date_ts"
+  - name: "is_current_record"
+    framework_column: "w_current_record_flag"
