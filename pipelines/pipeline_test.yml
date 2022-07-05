@@ -10,6 +10,3 @@ jobs:
 - f_flight_2:
     job_parameters:
       year: "1990"
-- f_flight_2:
-    job_parameters:
-      year: "1989"
