@@ -65,6 +65,7 @@ target:
     template: "delta"
   primary_key_columns:
   - "Id"
+  - "Year"
   additional_columns:
   - name: "eff_start_date_ts"
     framework_column: "w_eff_start_date_ts"
