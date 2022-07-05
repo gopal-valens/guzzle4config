@@ -66,10 +66,6 @@ target:
   primary_key_columns:
   - "Id"
   additional_columns:
-  - name: "last_updated_ts"
-    framework_column: "w_refresh_ts"
-  - name: "create_date_ts"
-    framework_column: "w_created_ts"
   - name: "eff_start_date_ts"
     framework_column: "w_eff_start_date_ts"
   - name: "eff_end_date_ts"
