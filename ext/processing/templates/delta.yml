@@ -219,7 +219,7 @@ operations:
               FROM
                 (${source.query}) sp
               FULL JOIN (select * from ${target.table} where Year = '${jobParams['year']}' AND ${frameworkColumns['w_eff_end_date_ts'].name} is null) dp
-              ON (dp.Year = '${jobParams['year']}' AND ${primaryKeyColumns.collect{name -> 'sp.' + name + ' = dp.' + name}.join(' and ')})
+              ON (dp.Year = sp.Year AND dp.Year = '${jobParams['year']}' AND ${primaryKeyColumns.collect{name -> 'sp.' + name + ' = dp.' + name}.join(' and ')})
             ) m
           JOIN
             (

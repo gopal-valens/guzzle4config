@@ -63,7 +63,6 @@ target:
   properties:
     table: "f_flights_2"
     template: "delta"
-    partitionColumnCondition: "Year = '${year}'"
   primary_key_columns:
   - "Id"
   additional_columns:
