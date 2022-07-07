@@ -218,8 +218,8 @@ operations:
                   1 END AS scd_change_type_id
               FROM
                 (${source.query}) sp
-              FULL JOIN (select * from ${target.table} where Year = '${jobParams['year']}' AND ${frameworkColumns['w_eff_end_date_ts'].name} is null) dp
-              ON (dp.Year = '${jobParams['year']}' AND ${primaryKeyColumns.collect{name -> 'sp.' + name + ' = dp.' + name}.join(' and ')})
+              FULL JOIN (select * from ${target.table} where ${frameworkColumns['w_eff_end_date_ts'].name} is null) dp
+              ON (dp.Year = '1990' AND ${primaryKeyColumns.collect{name -> 'sp.' + name + ' = dp.' + name}.join(' and ')})
             ) m
           JOIN
             (
