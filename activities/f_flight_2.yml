@@ -62,7 +62,7 @@ target:
   incremental: false
   properties:
     table: "f_flights_2"
-    template: "delta"
+    template: "delta-updated"
   primary_key_columns:
   - "Id"
   additional_columns:
