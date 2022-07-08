@@ -7,7 +7,7 @@ properties:
 jobs:
 - csv_to_hive:
     job_parameters:
-      target: "users"
+      target: "users4"
     spark_properties:
       job_compute_key: "compute_1"
 - hive_to_hive_users4:

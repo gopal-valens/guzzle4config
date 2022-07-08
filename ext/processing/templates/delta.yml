@@ -234,6 +234,7 @@ operations:
         )
         mp ON
         (
+          p.Year = '${jobParams['year']}' AND p.Year = mp.Year AND  
           p.${frameworkColumns['w_eff_start_date_ts'].name} = mp.${frameworkColumns['w_eff_start_date_ts'].name}
           and ${primaryKeyColumns.collect{name -> 'p.' + name + ' = mp.' + name}.join(' and ')}
         )
