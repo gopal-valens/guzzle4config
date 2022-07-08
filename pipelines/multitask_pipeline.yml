@@ -7,24 +7,23 @@ properties:
 jobs:
 - csv_to_hive:
     job_parameters:
+      source: "users*csv"
       target: "users4"
     spark_properties:
       job_compute_key: "compute_1"
-- hive_to_hive_users4:
+- csv_to_hive:
+    job_parameters:
+      source: "users*csv"
+      target: "users2"
     spark_properties:
-      job_compute_key: "compute_2"
+      job_compute_key: "compute_1"
+- "hive_to_hive_users4"
 computes:
 - name: "compute_1"
   properties:
     spark_version: "10.4.x-scala2.12"
-    workers:
-      num_workers: "1"
-    instance_pool_id: "${cluster_pool}"
-- name: "compute_2"
-  properties:
-    spark_version: "9.1.x-scala2.12"
-    driver_node_type_id: "Standard_DS3_v2"
-    node_type_id: "Standard_DS3_v2"
+    driver_node_type_id: "Standard_F4s"
+    node_type_id: "Standard_F4"
     workers:
       num_workers: "1"
 spark_properties: {}
