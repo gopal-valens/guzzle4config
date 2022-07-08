@@ -1,3 +1,17 @@
 version: 1
 job:
   type: "processing"
+source:
+  endpoint: "deltastore"
+  properties:
+    sql: |-
+      Select
+        *
+      from
+        guzzle
+      where
+        col1 = 'abc'
+target:
+  endpoint: "deltastore"
+  operation: "append"
+  properties: {}
