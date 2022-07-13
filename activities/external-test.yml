@@ -1,0 +1,12 @@
+version: 1
+job:
+  type: "external"
+config:
+  endpoint: "databricks"
+  properties:
+    run_name: "abc"
+    task: "notebook"
+    task_properties:
+      notebook_path: "/Users/gopal.ghanghar@justanalytics.com/notebook1"
+      parameters:
+        param1: "value1"
