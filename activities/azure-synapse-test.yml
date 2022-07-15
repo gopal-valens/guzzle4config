@@ -1,6 +1,8 @@
 version: 1
 job:
   type: "ingestion"
+  tags:
+  - "test"
 source:
   endpoint: "azure-synapse-native"
   properties:
