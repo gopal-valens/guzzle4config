@@ -7,7 +7,6 @@ source:
   endpoint: "azure-synapse-native"
   properties:
     table: "aab"
-    filter: "abc"
     format_properties:
       clean_column_name: false
 schema:
@@ -24,4 +23,4 @@ reject:
   properties:
     table: "rejectTest"
     format_properties:
-      table_type: "internal"
+      table_type: "external"
