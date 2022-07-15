@@ -1,2 +1,6 @@
 version: 1
+metadata:
+  tags:
+  - "synapse"
+  - "test"
 technology: "azure-synapse-analytics-native"
